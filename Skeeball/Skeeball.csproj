@@ -1,0 +1,40 @@
+﻿<Project Sdk="Meadow.Sdk/1.1.0">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OutputType>Library</OutputType>
+    <AssemblyName>App</AssemblyName>
+	<LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="boston1.jpg" />
+    <None Remove="bunny1.jpg" />
+    <None Remove="bunny2.jpg" />
+    <None Remove="carrot1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\boston1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\bunny1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\bunny2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\carrot1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Meadow.Foundation.Audio.MicroAudio" Version="2.2.0.2" />
+    <PackageReference Include="Meadow.Foundation.Leds.Apa102" Version="2.2.0.2" />
+    <PackageReference Include="Meadow.ProjectLab" Version="2.2.0.2" />
+    <PackageReference Include="SimpleJpegDecoder" Version="0.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="meadow.config.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
